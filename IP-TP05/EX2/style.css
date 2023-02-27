@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+.wrapper{
+    
+    width: 500px;
+    height:27rem ;
+    position: absolute;
+    transform: translate(-50% , -50%);
+    top: 50%;
+    left: 50%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    box-shadow: 0 0 50px slategrey;
+}
+.container{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Tilt Warp';
+
+}
+span{
+    color: rgb(33, 106, 223);
+}
+.input-container{
+    justify-content: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap:20px ;
+}
+
+.input-container input{
+    background-color: azure;
+    border-radius: 0.5em;
+    height: 20px;
+    text-indent: 10px;
+}
+.input-container button{
+    border-radius: 0.5em;
+    height: 25px;
+    background-color: rgb(33, 106, 223);
+    color: #fff;
+}
+.emoji{
+    font-size: 4rem;
+}
+.delay{
+    border: 3px solid #D3D3D3;
+    width:10rem;
+    height: 5rem;
+    padding:30px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    background-color:#D3D3D3;
+    border-radius: 0.5rem;
+}
+.delay{
+    font-size: 30px;
+    font-family: 'Tilt Warp';
+}
+
+.loading{
+    border: 3px solid #D3D3D3;
+    width:10rem;
+    height: 5rem;
+    padding:30px;
+    margin: auto;
+    margin-top: 30px;
+    background-color:#D3D3D3;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loading > :nth-child(1){
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Tilt Warp';
+}
+.loading > :nth-child(2){
+    text-align: center;
+    font-size: 30px;
+    color: red;
+
+}
+.loading > :nth-child(3){
+    text-align: center;
+    font-size: 20px;
+    color: rgb(33, 106, 223);
+    
+}

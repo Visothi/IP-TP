@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+  <body style="font-family: Rockwell;">
+    <html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Activity Generator</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+      <!-- <link rel="stylesheet" href="style.css"> -->
+      <style>
+        *{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+h2{
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 80px;
+}
+body{
+    
+    /* border: 3px solid black; */
+    height: 400px;
+    width: 400px;
+    border-radius: 1rem;
+    margin: auto;
+    box-shadow: 0 0 50px slategrey;
+    padding: 50px;
+    margin-top:  5rem;
+}
+#warpper{
+    border: 3px solid black;
+    border-radius: 1rem;
+    margin: auto;
+    box-shadow: 0 0 50px slategrey;
+    padding: 40px;
+}
+button{
+    padding: 10px;
+    background-color: rgb(5, 5, 14);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 8.5rem;
+    margin-bottom: 10px;
+}
+button:hover{
+    padding: 10px;
+    background-color: #888888;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+}
+      </style>
+    </head>
+  <body>
+    <h2>
+      😗
+    </h2>
+    <p align="center">Click the button to generate a random activity!</p>
+    <button id="generate-btn" style="font-family: Rockwell;">Tell me what to do</button>
+    <div id="warpper">
+      <div id="activity-container"></div>
+      <div id = "participants"></div>
+      <div id="price"></div>
+      <div id="link"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+  <script>
+    const generateBtn = document.getElementById('generate-btn');
+    const activityContainer = document.getElementById('activity-container');
+    const activityParticpant = document.getElementById('participants');
+    const activityPrice = document.getElementById('price');
+    const activityLink = document.getElementById('link');
+
+    generateBtn.addEventListener('click', () => {
+    fetch('https://www.boredapi.com/api/activity')
+        .then(response => response.json())
+        .then(data => {
+        const activity = data.activity;
+        const participants= data.participants;
+        const price= data.price;
+        const link = data.link;
+
+        activityContainer.innerHTML = `<div><i class="fa-solid fa-tag"></i> ${"Type: " + activity}</div>`;
+        activityParticpant.innerHTML = `<div><i class="fa-solid fa-users-between-lines"></i></i> ${"participants: " + participants}</div>`;
+        activityPrice.innerHTML = `<div><i class="fa-solid fa-circle-dollar-to-slot"></i></i> ${"price: "+price}</div>`;
+        activityLink.innerHTML= `<div><i class="fa-sharp fa-solid fa-link"></i> ${"Link: "+link}</div>`;
+        })
+        .catch(error => console.error(error));
+    });
+
+  </script>
+</html>
